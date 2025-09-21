@@ -8,27 +8,27 @@ const DevelopersPage = ({ onNavigate }) => {
     {
       id: 1,
       name: "Ranida Games",
-      logo: "https://pbs.twimg.com/profile_images/1042651911088828416/TYBaUlFK_400x400.jpg",
+      logo: "https://pbs.twimg.com/profile_images/1042651911088828416/TYBaUlFK_400x400.jpg", 
     },
     {
       id: 2,
-      name: "Solitary Studios",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ5EOMGmmcLnow0OUhKijmtnOMD4R2EogiGA&s",
+      name: "Solitary Studios", 
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ5EOMGmmcLnow0OUhKijmtnOMD4R2EogiGA&s", 
     },
     {
       id: 3,
       name: "Spacezero Interactive",
-      logo: "https://yt3.googleusercontent.com/IFqxB1tIc7395szE_O47buj6d9Dfgye5MZ3SqT1qsszAXqTtrktt-Fh4CrAxhCDNbFKE4Llw=s900-c-k-c0x00ffffff-no-rj",
+      logo: "https://yt3.googleusercontent.com/IFqxB1tIc7395szE_O47buj6d9Dfgye5MZ3SqT1qsszAXqTtrktt-Fh4CrAxhCDNbFKE4Llw=s900-c-k-c0x00ffffff-no-rj", 
     },
     {
       id: 4,
       name: "Polychroma Games",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa8TYvLFyehx-ucpootSjncx7nXQDBAhYHhQ&s",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa8TYvLFyehx-ucpootSjncx7nXQDBAhYHhQ&s", 
     },
     {
       id: 5,
       name: "Sekai Project",
-      logo: "https://upload.wikimedia.org/wikipedia/en/6/6a/Sekai_Project_logo.jpeg",
+      logo: "https://upload.wikimedia.org/wikipedia/en/6/6a/Sekai_Project_logo.jpeg", 
     },
     {
       id: 6,
@@ -117,33 +117,30 @@ const DevelopersPage = ({ onNavigate }) => {
         </div>
 
         {/* Developers Grid */}
-        <div className="mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="mb-12 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ">
             {currentDevelopers.map((developer) => (
-              <div key={developer.id} className="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition-colors">
+              <div key={developer.id} className="bg-gray-900 rounded-lg overflow-hidden hover:bg-gray-800 transition-colors">
                 {/* Developer Logo */}
-                <div className="mb-4">
+                <div className="bg-black h-48 flex items-center justify-center">
                   <img 
                     src={developer.logo}
                     alt={developer.name}
-                    className="w-32 h-32 mx-auto rounded-lg object-cover bg-white"
+                    className="w-40 h-40 object-contain"
                   />
                 </div>
                 
                 {/* Developer Info */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-white mb-2">
+                <div className="p-6 text-center">
+                  <h3 className="text-lg font-bold text-white mb-4">
                     {developer.name}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4">
-                    {developer.description}
-                  </p>
+                  
+                  {/* Learn More Button */}
+                  <button className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg text-sm transition-colors w-full">
+                    Learn More
+                  </button>
                 </div>
-                
-                {/* Learn More Button */}
-                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg text-sm transition-colors">
-                  Learn More
-                </button>
               </div>
             ))}
           </div>
