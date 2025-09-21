@@ -9,8 +9,8 @@ const Games = ({ onNavigate }) => {
     {
       id: 1,
       title: "Jeepney Simulator",
-      image: "https://via.placeholder.com/600x300/1f2937/ffffff?text=Jeepney+Simulator",
-      description: "Experience the authentic Filipino jeepney driving experience in this immersive simulator game."
+      image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2489990/capsule_616x353.jpg?t=1694866586",
+      description: "Embrace your inner jeepney driver! Pick up passengers, calculate change, and weave through traffic in this Filipino-made driving game. Feed your family, customize your jeepneys, and unlock more rides! Don't forget to bring your towel!"
     },
     {
       id: 2,
@@ -23,47 +23,44 @@ const Games = ({ onNavigate }) => {
   const newArrivals = [
     {
       id: 1,
-      title: "Wes Versus",
-      subtitle: "Balinoy",
-      image: "https://via.placeholder.com/250x350/dc2626/ffffff?text=Wes+Versus+Balinoy"
+      title: "Lola's Lutong Bahay",
+      image: "https://cdna.artstation.com/p/assets/images/images/066/281/302/large/jamier-prime-lola-s-lutong-bahay-title-1.jpg?1692539397"
     },
     {
       id: 2,
-      title: "Loot Box",
-      subtitle: "Adventure Game",
-      image: "https://via.placeholder.com/250x350/1d4ed8/ffffff?text=Loot+Box"
+      title: "Until Then",
+      image: "https://www.rappler.com/tachyon/2024/02/until-then-ShoulderLean.jpg"
     },
     {
       id: 3,
-      title: "Agronomis",
-      subtitle: "Origins",
-      image: "https://via.placeholder.com/250x350/7c3aed/ffffff?text=Agronomis+Origins"
+      title: "Agnostiko Origins",
+      image: "https://images.eshop-prices.com/games/14782/480w.jpeg"
     }
   ];
 
   const categories = [
     {
       id: 1,
-      name: "BATTLE GAMES",
-      image: "https://via.placeholder.com/200x200/ef4444/ffffff?text=BATTLE+GAMES",
+      name: "MOBILE GAMES",
+      image: "https://www.businessofapps.com/wp-content/uploads/2020/06/app-store-games.jpg",
       color: "from-red-600 to-red-800"
     },
     {
       id: 2,
       name: "RPG GAMES", 
-      image: "https://via.placeholder.com/200x200/10b981/ffffff?text=RPG+GAMES",
+      image: "https://nolisoli.ph/wp-content/uploads/2018/12/mamayani.png",
       color: "from-green-500 to-green-700"
     },
     {
       id: 3,
       name: "FIGHTING GAMES",
-      image: "https://via.placeholder.com/200x200/3b82f6/ffffff?text=FIGHTING+GAMES", 
+      image: "https://sm.ign.com/ign_ap/screenshot/default/sinag-eventtemplate1-withlogo_bmsg.png", 
       color: "from-blue-500 to-blue-700"
     },
     {
       id: 4,
       name: "STRATEGY GAMES",
-      image: "https://via.placeholder.com/200x200/f59e0b/ffffff?text=STRATEGY+GAMES",
+      image: "https://i0.wp.com/gamingph.com/wp-content/uploads/2025/05/cHm0OO.png?ssl=1",
       color: "from-yellow-500 to-yellow-700"
     }
   ];
@@ -188,22 +185,19 @@ const Games = ({ onNavigate }) => {
                   />
                   {featuredSlide === 0 && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <h3 className="text-4xl font-bold text-white text-center">
-                        JEEPNEY<br/>SIMULATOR
-                      </h3>
                     </div>
                   )}
                 </div>
                 
                 {/* Game Info */}
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center items-center text-center">
                   <h3 className="text-3xl font-bold text-white mb-4">
                     {featuredGames[featuredSlide].title}
                   </h3>
                   <p className="text-gray-300 mb-6 leading-relaxed">
                     {featuredGames[featuredSlide].description}
                   </p>
-                  <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg w-fit transition-colors">
+                  <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
                     DOWNLOAD
                   </button>
                 </div>
@@ -242,6 +236,32 @@ const Games = ({ onNavigate }) => {
                   }`}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* GALA Mobile Era Banner Section */}
+        <div className="mb-8">
+          <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="grid grid-cols-2 gap-0">
+              {/* GALA Game Image */}
+              <div>
+                <img 
+                  src="https://kendikorp.com/wp-content/uploads/2023/01/banner.png?w=1024"
+                  alt="GALA Mobile Era Game"
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              
+              {/* Game Info */}
+              <div className="bg-gray-700 flex flex-col justify-center p-6">
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Mobile Era: The Filipino Game Wave
+                </h3>
+                <p className="text-cyan-400 text-base font-semibold">
+                  NOW THRU AUGUST 30 AT 10 AM PT
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -316,9 +336,14 @@ const Games = ({ onNavigate }) => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {categories.slice(categorySlide, categorySlide + 4).map((category) => (
                 <div key={category.id} className="relative group cursor-pointer">
-                  <div className={`bg-gradient-to-br ${category.color} rounded-lg h-40 flex items-center justify-center overflow-hidden`}>
-                    <div className="text-center">
-                      <h3 className="text-white font-bold text-sm md:text-base px-2">
+                  <div className="relative rounded-lg h-40 overflow-hidden">
+                    <img 
+                      src={category.image}
+                      alt={category.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-80 flex items-center justify-center`}>
+                      <h3 className="text-white font-bold text-sm md:text-base px-2 text-center">
                         {category.name}
                       </h3>
                     </div>
@@ -369,7 +394,7 @@ const Games = ({ onNavigate }) => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black py-12 border-t border-gray-800">
+      <footer className="bg-black py-12  border-gray-800">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             {/* GameBayan Logo and Description */}
