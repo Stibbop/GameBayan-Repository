@@ -1,0 +1,271 @@
+import React from 'react';
+
+const AboutUs = ({ onNavigate }) => {
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Header Navigation */}
+      <header className="bg-gray-800 shadow-lg">
+        <div className="container mx-auto px-6 py-4">
+          <nav className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                <span className="text-black font-bold text-lg">🎮</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold">
+                  <span className="text-red-500">GAME</span>
+                  <span className="text-blue-400">BAYAN</span>
+                </h1>
+              </div>
+            </div>
+            
+            {/* Navigation Menu */}
+            <div className="hidden md:flex space-x-8">
+              <button className="text-yellow-400 hover:text-yellow-300 font-medium underline">About Us</button>
+              <button 
+                onClick={() => onNavigate('games')} 
+                className="text-cyan-600 hover:text-cyan-500"
+              >
+                Games
+              </button>
+              <button 
+                onClick={() => onNavigate('explore')} 
+                className="text-cyan-600 hover:text-cyan-500"
+              >
+                Explore
+              </button>
+              <button className="text-cyan-600 hover:text-cyan-500">Developers</button>
+            </div>
+            
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button className="text-gray-300 hover:text-white">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* Main About Us Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center ">
+        
+            <div className="space-y-8 ">
+              <h1 className="text-5xl lg:text-6xl font-bold text-blue-400 text-center" >About Us</h1>
+              
+              {/* GameBayan Logo Large */}
+              <div className="flex items-center justify-center space-x-4">
+                <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-black font-bold text-2xl">🎮</span>
+                </div>
+                <div>
+                  <h2 className="text-4xl font-bold">
+                    <span className="text-red-500">GAME</span>
+                    <span className="text-blue-400">BAYAN</span>
+                  </h2>
+                </div>
+              </div>
+              
+              {/* Tagline */}
+              <h3 className="text-2xl font-semibold text-gray-300 text-center">
+                Where Pinoy Creativity Meets Gaming
+              </h3>
+              
+              {/* Description */}
+              <p className="text-gray-400 text-lg leading-relaxed">
+                GameBayan is a web-based platform designed to promote and
+                feature video games proudly made by Filipino game developers.
+                The web platform totally made indie and accessible "Steam-style" catalog 
+                so games can easily discover, explore, and support homegrown talent.
+              </p>
+            </div>
+            
+            {/* Right Column - Game Development Team Image */}
+            <div className="relative">
+              <img 
+                src="https://meliorgames.com/wp-content/uploads/2019/09/game-dev-team-min-scaled.jpg" 
+                alt="Game Development Team" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Offer Section */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center text-cyan-400 mb-12">What We Offer?</h2>
+          
+          <div className="max-w-6xl mx-auto">
+            {/* Top Row - 3 Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {/* Visibility for Local Developers */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-white">Visibility for Local Developers</h3>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                We give Filipino game creators a dedicated space to showcase their work to both local and international audiences.
+              </p>
+            </div>
+
+            {/* Stream-Style Experience */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-white">A "Steam-Style" Catalog Experience</h3>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Browse games the way you would on global platforms, but with a focus on Filipino creativity, culture, and innovation.
+              </p>
+            </div>
+
+            {/* Support for Gaming Industry */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-white">Support for a Growing Industry</h3>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                By featuring and promoting Philippine-made games, GameBayan helps fuel the growth of the local game development community.
+              </p>
+            </div>
+            </div>
+
+            {/* Bottom Row - 2 Cards Centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Hub for Filipino-Made Games */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-white">A Hub for Filipino-Made Games</h3>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                GameBayan brings together locally developed indie and studio titles in one easy-to-access platform—your one-stop shop for discovering homegrown talent.
+              </p>
+            </div>
+
+            {/* A Gateway to Unique and Culturally Inspired Titles */}
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-white">A Gateway to Unique and Culturally Inspired Titles</h3>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Find games with stories, art, and gameplay that reflect the rich heritage and imagination of the Philippines.
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-8 text-cyan-400">
+            Be part of the future of Philippine gaming!
+          </h2>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+            Explore Games!
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8">
+            {/* GameBayan Logo and Description */}
+            <div className="md:col-span-2">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-black font-bold text-lg">🎮</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold">
+                    <span className="text-red-500">GAME</span>
+                    <span className="text-blue-400">BAYAN</span>
+                  </h3>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                GameBayan is a web-based platform designed to promote and feature video games
+                proudly made by Filipino game developers. The web platform totally made indie and
+                accessible "Steam-style" catalog so games can easily discover, explore, and support homegrown talent.
+              </p>
+            </div>
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">About Us</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Games</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Explore</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Developers</a></li>
+              </ul>
+            </div>
+            
+            {/* Contact */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
+              <div className="space-y-2 text-sm">
+                <p className="text-gray-400">+639876543021</p>
+                <p className="text-gray-400">GameBayan@gmail.com</p>
+              </div>
+              
+              {/* Social Media Icons */}
+              <div className="flex space-x-4 mt-4 justify-center">
+                <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                  <span className="text-white text-sm">f</span>
+                </a>
+                <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors">
+                  <span className="text-white text-sm">t</span>
+                </a>
+                <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                  <span className="text-white text-sm">@</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Copyright */}
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-400 text-sm">© 2025 GameBayan. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default AboutUs;
