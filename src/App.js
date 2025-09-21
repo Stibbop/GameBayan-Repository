@@ -3,6 +3,7 @@ import './App.css';
 import AboutUs from './About Us';
 import ExplorePage from './Explore Page';
 import Games from './Games';
+import DevelopersPage from './Developers Page';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('about');
@@ -15,6 +16,8 @@ function App() {
         return <ExplorePage onNavigate={setCurrentPage} />;
       case 'games':
         return <Games onNavigate={setCurrentPage} />;
+      case 'developers':
+        return <DevelopersPage onNavigate={setCurrentPage} />;
       default:
         return <AboutUs onNavigate={setCurrentPage} />;
     }

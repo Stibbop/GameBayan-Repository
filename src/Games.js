@@ -123,7 +123,12 @@ const Games = ({ onNavigate }) => {
               >
                 Explore
               </button>
-              <button className="text-cyan-600 hover:text-cyan-500">Developers</button>
+              <button 
+                onClick={() => onNavigate('developers')} 
+                className="text-cyan-600 hover:text-cyan-500"
+              >
+                Developers
+              </button>
             </div>
             
             {/* Mobile Menu Button */}
@@ -410,7 +415,7 @@ const Games = ({ onNavigate }) => {
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed text-justify">
                 GameBayan is a web-based platform designed to promote and feature video games
                 proudly made by Filipino game developers. The web platform totally made indie and
                 accessible "Steam-style" catalog so games can easily discover, explore, and support homegrown talent.
