@@ -110,57 +110,70 @@ const HomePage = ({ onNavigate }) => {
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-black">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Hero Text */}
-            <div className="space-y-6">
-              <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium inline-block">
-                Web Advertisement
+            <div className="space-y-8">
+              {/* Gaming Marketplace Badge */}
+              <div>
+                <span className="text-gray-400 text-sm font-medium">Gaming Marketplace</span>
               </div>
+              
+              {/* Main Title */}
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-                <span className="text-white">All New</span>
-                <span className="text-cyan-400"> Gaming</span>
+                <span className="text-cyan-400">All New Gaming</span>
               </h1>
-              <p className="text-gray-300 text-lg">
-                Discover cutting-edge gaming experiences from Filipino developers. 
-                Join our community and explore the best indie games the Philippines has to offer.
+              
+              {/* Description */}
+              <p className="text-gray-300 text-lg leading-relaxed">
+                A Web-based showcase platform for video games created by Filipino Developers.
               </p>
+              
+              {/* Action Buttons */}
               <div className="flex space-x-4">
-                <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                  Gaming
+                <button 
+                  onClick={() => onNavigate('explore')}
+                  className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
+                >
+                  Explore
                 </button>
-                <button className="border border-gray-600 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                  View more games →
+                <button 
+                  onClick={() => onNavigate('about')}
+                  className="border border-gray-600 hover:bg-gray-800 text-white px-8 py-3 rounded-full font-medium transition-colors"
+                >
+                  Know more about us
                 </button>
               </div>
             </div>
 
             {/* Right Column - Featured Games */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Game Card 1 */}
+              {/* Hablon Game Card */}
               <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400">
-                <div className="h-40 bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-yellow-600 to-orange-800 flex items-center justify-center relative">
                   <div className="text-center text-white">
-                    <h3 className="font-bold text-lg">REPUBLIC DEFENDER</h3>
-                    <p className="text-sm opacity-90">Strategy Game</p>
+                    <h3 className="font-bold text-xl mb-2">HABLON</h3>
+                    <p className="text-sm opacity-90">Bayani</p>
+                    <p className="text-xs opacity-75 mt-2">FROM VISAYAS TO START</p>
                   </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-gray-300 text-sm">Defend the archipelago in this tactical strategy game.</p>
+                  {/* Character silhouette placeholder */}
+                  <div className="absolute right-4 bottom-4 w-16 h-16 bg-black bg-opacity-30 rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg">⚔️</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Game Card 2 */}
+              {/* Hapunan Game Card */}
               <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-600">
-                <div className="h-40 bg-gradient-to-br from-orange-600 to-red-800 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center relative">
                   <div className="text-center text-white">
-                    <h3 className="font-bold text-lg">HAPUNAN</h3>
-                    <p className="text-sm opacity-90">Horror Game</p>
+                    <h3 className="font-bold text-xl mb-2">HAPUNAN</h3>
+                    <p className="text-sm opacity-75 mt-8">Shadows of Barangay Sak Duto</p>
                   </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-gray-300 text-sm">Experience a nightmare at the dinner table.</p>
+                  {/* Horror theme elements */}
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-red-600 bg-opacity-50 rounded-full"></div>
+                  <div className="absolute bottom-4 left-4 w-6 h-6 bg-red-600 bg-opacity-30 rounded-full"></div>
                 </div>
               </div>
             </div>
@@ -193,16 +206,13 @@ const HomePage = ({ onNavigate }) => {
               <p className="text-gray-300 leading-relaxed">
                 Set in the Philippines, this narrative-driven game features beautiful pixel art, compelling characters, and choices that matter. Uncover the mysteries surrounding your town while navigating the complexities of teenage life.
               </p>
-              <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                Learn More
-              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Exogenesis: Perils of Rebirth */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Game Description */}
@@ -214,9 +224,6 @@ const HomePage = ({ onNavigate }) => {
               <p className="text-gray-300 leading-relaxed">
                 Lead your crew through dangerous territories, make crucial decisions that affect the story, and engage in tactical combat against hostile alien forces. With multiple endings and branching storylines, every playthrough offers a unique experience.
               </p>
-              <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                Discover More
-              </button>
             </div>
 
             {/* Game Visual */}
@@ -255,21 +262,13 @@ const HomePage = ({ onNavigate }) => {
               <p className="text-gray-300 leading-relaxed">
                 Master combo systems, special moves, and ultimate attacks while competing in beautifully designed arenas that showcase iconic Filipino landmarks. Whether you're playing locally or online, Bayani delivers intense fighting action.
               </p>
-              <div className="flex space-x-4">
-                <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                  Play Now
-                </button>
-                <button className="border border-cyan-600 hover:bg-cyan-600 text-cyan-400 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                  Watch Trailer
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Top Developers Section */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl font-bold text-white">Top Developers in the Platform</h2>
