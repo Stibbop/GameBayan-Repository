@@ -386,7 +386,7 @@ const AboutUs = ({ onNavigate }) => {
       </section>
 
       {/* Contact Us Email Section */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -396,68 +396,8 @@ const AboutUs = ({ onNavigate }) => {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
-              {/* Contact Information */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-white font-medium">Email</p>
-                        <p className="text-gray-300">GameBayan@gmail.com</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-white font-medium">Phone</p>
-                        <p className="text-gray-300">+639876543021</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-white font-medium">Response Time</p>
-                        <p className="text-gray-300">Usually within 24 hours</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Social Media */}
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-                  <div className="flex space-x-4">
-                    <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                      <span className="text-white font-bold">f</span>
-                    </a>
-                    <a href="#" className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                      <span className="text-white font-bold">t</span>
-                    </a>
-                    <a href="#" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                      <span className="text-white font-bold">@</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Form */}
+            {/* Contact Form - Full Width */}
+            <div className="max-w-2xl mx-auto">
               <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
                 <h3 className="text-2xl font-semibold text-white mb-6">Send us a message</h3>
                 
@@ -560,32 +500,7 @@ const AboutUs = ({ onNavigate }) => {
                       'Send Message'
                     )}
                   </button>
-                  
-                  {/* Quick Test Button - Remove after testing */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      console.log('EmailJS Test - Check if emailjs is loaded:', typeof emailjs);
-                      console.log('Current form values:', emailForm);
-                    }}
-                    className="w-full mt-2 py-2 px-4 bg-yellow-600 text-white rounded-lg text-sm hover:bg-yellow-700"
-                  >
-                    🔧 Debug Test (Check Console)
-                  </button>
                 </form>
-                
-                <div className="mt-6 p-4 bg-blue-900 bg-opacity-50 border border-blue-600 rounded-lg">
-                  <p className="text-blue-200 text-sm mb-3">
-                    <strong>⚠️ Setup Required:</strong> To make this email function work, you need to:
-                  </p>
-                  <ol className="text-blue-200 text-xs space-y-1 ml-4">
-                    <li>1. Go to <strong>emailjs.com</strong> and create a free account</li>
-                    <li>2. Add an email service (Gmail, Outlook, etc.)</li>
-                    <li>3. Create an email template</li>
-                    <li>4. Replace the placeholder values in the code with your actual EmailJS credentials</li>
-                    <li>5. Check browser console (F12) for error messages if it's not working</li>
-                  </ol>
-                </div>
               </div>
             </div>
           </div>
