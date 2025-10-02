@@ -127,7 +127,10 @@ const AboutUs = ({ onNavigate }) => {
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
+            <button 
+              onClick={() => onNavigate('home')}
+              className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            >
               <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                 <span className="text-black font-bold text-lg">🎮</span>
               </div>
@@ -137,7 +140,7 @@ const AboutUs = ({ onNavigate }) => {
                   <span className="text-blue-400">BAYAN</span>
                 </h1>
               </div>
-            </div>
+            </button>
             
             {/* Navigation Menu */}
             <div className="hidden md:flex space-x-8">
@@ -513,7 +516,10 @@ const AboutUs = ({ onNavigate }) => {
           <div className="grid md:grid-cols-4 gap-8">
             {/* GameBayan Logo and Description */}
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
+              <button 
+                onClick={() => onNavigate('home')}
+                className="flex items-center space-x-2 mb-4 hover:opacity-80 transition-opacity"
+              >
                 <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
                   <span className="text-black font-bold text-lg">🎮</span>
                 </div>
@@ -523,7 +529,7 @@ const AboutUs = ({ onNavigate }) => {
                     <span className="text-blue-400">BAYAN</span>
                   </h3>
                 </div>
-              </div>
+              </button>
               <p className="text-gray-400 text-sm leading-relaxed text-justify">
                 GameBayan is a web-based platform designed to promote and feature video games
                 proudly made by Filipino game developers. The web platform totally made indie and
