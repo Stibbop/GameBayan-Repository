@@ -1,7 +1,125 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const AboutUs = ({ onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Email form state
+  const [emailForm, setEmailForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEmailForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleEmailSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    // Basic validation
+    if (!emailForm.name || !emailForm.email || !emailForm.subject || !emailForm.message) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please fill in all required fields.'
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // EmailJS configuration - REPLACE THESE WITH YOUR ACTUAL VALUES!
+      const serviceID = 'service_bk1nkh2'; // Replace with your EmailJS service ID
+      const templateID = 'template_vlb6nfj'; // Replace with your EmailJS template ID
+      const publicKey = 'vCjpTC8FR5OSky1my'; // Replace with your EmailJS public key
+
+      // Check if credentials are still placeholder values
+      if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
+        setSubmitStatus({
+          type: 'error',
+          message: 'EmailJS is not configured yet. Please set up your EmailJS credentials first.'
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      console.log('Attempting to send email with:', {
+        serviceID,
+        templateID,
+        publicKey: publicKey.substring(0, 5) + '...' // Only show first 5 chars for security
+      });
+
+      const templateParams = {
+        to_name: emailForm.name,
+        to_email: emailForm.email,
+        from_name: 'GameBayan Team',
+        from_email: 'GameBayan@gmail.com',
+        subject: emailForm.subject,
+        user_message: emailForm.message,
+        reply_to: 'GameBayan@gmail.com'
+      };
+
+      console.log('Template params:', templateParams);
+
+      // Initialize EmailJS with public key
+      emailjs.init(publicKey);
+
+      // Send email TO the person who filled out the form
+      const response = await emailjs.send(serviceID, templateID, templateParams);
+      
+      console.log('Email sent successfully:', response);
+      
+      setSubmitStatus({
+        type: 'success',
+        message: `Thank you ${emailForm.name}! We've sent a confirmation email to ${emailForm.email}. We'll get back to you soon!`
+      });
+      
+      // Reset form
+      setEmailForm({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Detailed error:', error);
+      
+      let errorMessage = 'Failed to send email. ';
+      
+      if (error.status === 400) {
+        errorMessage += 'Invalid template or service configuration.';
+      } else if (error.status === 401) {
+        errorMessage += 'Authentication failed. Check your EmailJS credentials.';
+      } else if (error.status === 403) {
+        errorMessage += 'Access denied. Check your EmailJS public key.';
+      } else if (error.status === 413) {
+        errorMessage += 'Message too large.';
+      } else if (error.text) {
+        errorMessage += error.text;
+      } else {
+        errorMessage += 'Please check your internet connection and try again.';
+      }
+      
+      setSubmitStatus({
+        type: 'error',
+        message: errorMessage
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header Navigation */}
@@ -264,6 +382,213 @@ const AboutUs = ({ onNavigate }) => {
           <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
             Explore Games!
           </button>
+        </div>
+      </section>
+
+      {/* Contact Us Email Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-cyan-400 mb-4">Get In Touch</h2>
+              <p className="text-gray-300 text-lg">
+                Have questions, suggestions, or want to submit your game? We'd love to hear from you!
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-white font-medium">Email</p>
+                        <p className="text-gray-300">GameBayan@gmail.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-white font-medium">Phone</p>
+                        <p className="text-gray-300">+639876543021</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center">
+                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-white font-medium">Response Time</p>
+                        <p className="text-gray-300">Usually within 24 hours</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Media */}
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                  <div className="flex space-x-4">
+                    <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                      <span className="text-white font-bold">f</span>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                      <span className="text-white font-bold">t</span>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                      <span className="text-white font-bold">@</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Form */}
+              <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
+                <h3 className="text-2xl font-semibold text-white mb-6">Send us a message</h3>
+                
+                <form onSubmit={handleEmailSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                        Your Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={emailForm.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={emailForm.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                        placeholder="Enter your email"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                      Subject *
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={emailForm.subject}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                      placeholder="What's this about?"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={emailForm.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-vertical"
+                      placeholder="Tell us more about your inquiry..."
+                    />
+                  </div>
+                  
+                  {/* Status Messages */}
+                  {submitStatus.message && (
+                    <div className={`p-4 rounded-lg ${
+                      submitStatus.type === 'success' 
+                        ? 'bg-green-900 border border-green-600 text-green-200'
+                        : 'bg-red-900 border border-red-600 text-red-200'
+                    }`}>
+                      <p className="text-sm">{submitStatus.message}</p>
+                    </div>
+                  )}
+                  
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
+                      isSubmitting
+                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                        : 'bg-cyan-600 text-white hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </button>
+                  
+                  {/* Quick Test Button - Remove after testing */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      console.log('EmailJS Test - Check if emailjs is loaded:', typeof emailjs);
+                      console.log('Current form values:', emailForm);
+                    }}
+                    className="w-full mt-2 py-2 px-4 bg-yellow-600 text-white rounded-lg text-sm hover:bg-yellow-700"
+                  >
+                    🔧 Debug Test (Check Console)
+                  </button>
+                </form>
+                
+                <div className="mt-6 p-4 bg-blue-900 bg-opacity-50 border border-blue-600 rounded-lg">
+                  <p className="text-blue-200 text-sm mb-3">
+                    <strong>⚠️ Setup Required:</strong> To make this email function work, you need to:
+                  </p>
+                  <ol className="text-blue-200 text-xs space-y-1 ml-4">
+                    <li>1. Go to <strong>emailjs.com</strong> and create a free account</li>
+                    <li>2. Add an email service (Gmail, Outlook, etc.)</li>
+                    <li>3. Create an email template</li>
+                    <li>4. Replace the placeholder values in the code with your actual EmailJS credentials</li>
+                    <li>5. Check browser console (F12) for error messages if it's not working</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
