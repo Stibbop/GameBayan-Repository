@@ -40,10 +40,10 @@ const AboutUs = ({ onNavigate }) => {
     }
 
     try {
-      // EmailJS configuration - REPLACE THESE WITH YOUR ACTUAL VALUES!
-      const serviceID = 'service_bk1nkh2'; // Replace with your EmailJS service ID
-      const templateID = 'template_vlb6nfj'; // Replace with your EmailJS template ID
-      const publicKey = 'vCjpTC8FR5OSky1my'; // Replace with your EmailJS public key
+      // EmailJS configuration - REPLACE WITH YOUR ACTUAL VALUES FROM STEPS 2, 3, AND 4
+      const serviceID = 'service_bk1nkh2'; // STEP 2: Replace with YOUR Service ID
+      const templateID = 'template_agzehjr'; // STEP 3: Replace with YOUR Template ID  
+      const publicKey = 'vCjpTC8FR5OSky1my'; // STEP 4: Replace with YOUR Public Key
 
       // Check if credentials are still placeholder values
       if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
@@ -61,29 +61,47 @@ const AboutUs = ({ onNavigate }) => {
         publicKey: publicKey.substring(0, 5) + '...' // Only show first 5 chars for security
       });
 
-      const templateParams = {
-        to_name: emailForm.name,
-        to_email: emailForm.email,
-        from_name: 'GameBayan Team',
-        from_email: 'GameBayan@gmail.com',
-        subject: emailForm.subject,
-        user_message: emailForm.message,
-        reply_to: 'GameBayan@gmail.com'
-      };
-
-      console.log('Template params:', templateParams);
-
       // Initialize EmailJS with public key
       emailjs.init(publicKey);
 
-      // Send email TO the person who filled out the form
+      // SIMPLE SINGLE EMAIL APPROACH
+      // This will send ONE email with the user's information
+      const templateParams = {
+        to_name: emailForm.name, // Recipient name
+        to_email: emailForm.email, // Send TO the user's email
+        from_name: 'GameBayan Team', // Your team name  
+        from_email: 'GameBayan@gmail.com', // Your email
+        subject: `Thank you for contacting GameBayan - ${emailForm.subject}`,
+        user_message: `Thank you for your message about "${emailForm.subject}". 
+
+Your original message:
+"${emailForm.message}"
+
+We have received your inquiry and will get back to you within 24 hours. In the meantime, feel free to explore our Filipino-made games!
+
+If you need immediate assistance, please reply to this email.`,
+        original_subject: emailForm.subject,
+        user_email: emailForm.email,
+        user_name: emailForm.name
+      };
+
+      // Debug logging - check what's being sent
+      console.log('=== EMAIL DEBUG INFO ===');
+      console.log('Recipient email (to_email):', templateParams.to_email);
+      console.log('Recipient name (to_name):', templateParams.to_name);
+      console.log('Service ID:', serviceID);
+      console.log('Template ID:', templateID);
+      console.log('All template params:', templateParams);
+      console.log('========================');
+
+      // Send the email
       const response = await emailjs.send(serviceID, templateID, templateParams);
       
       console.log('Email sent successfully:', response);
       
       setSubmitStatus({
         type: 'success',
-        message: `Thank you ${emailForm.name}! We've sent a confirmation email to ${emailForm.email}. We'll get back to you soon!`
+        message: `Thank you ${emailForm.name}! We've sent a confirmation email to ${emailForm.email} and notified our team. We'll get back to you soon!`
       });
       
       // Reset form
@@ -511,7 +529,7 @@ const AboutUs = ({ onNavigate }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black py-12">
+      <footer className="bg-black py-12  border-gray-800">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             {/* GameBayan Logo and Description */}
@@ -541,10 +559,10 @@ const AboutUs = ({ onNavigate }) => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Games</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Explore</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Developers</a></li>
+                <li><button onClick={() => onNavigate('about')} className="text-gray-400 hover:text-white text-sm">About Us</button></li>
+                <li><button onClick={() => onNavigate('games')} className="text-gray-400 hover:text-white text-sm">Games</button></li>
+                <li><button onClick={() => onNavigate('explore')} className="text-gray-400 hover:text-white text-sm">Explore</button></li>
+                <li><button onClick={() => onNavigate('developers')} className="text-gray-400 hover:text-white text-sm">Developers</button></li>
               </ul>
             </div>
             

@@ -309,7 +309,7 @@ const HomePage = ({ onNavigate }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black py-12 border-t border-gray-800">
+      <footer className="bg-black py-12  border-gray-800">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             {/* GameBayan Logo and Description */}
@@ -328,9 +328,10 @@ const HomePage = ({ onNavigate }) => {
                   </h3>
                 </div>
               </button>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed text-justify">
                 GameBayan is a web-based platform designed to promote and feature video games
-                proudly made by Filipino game developers. Discover, explore, and support homegrown talent.
+                proudly made by Filipino game developers. The web platform totally made indie and
+                accessible "Steam-style" catalog so games can easily discover, explore, and support homegrown talent.
               </p>
             </div>
             
@@ -339,7 +340,7 @@ const HomePage = ({ onNavigate }) => {
               <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
               <ul className="space-y-2">
                 <li><button onClick={() => onNavigate('about')} className="text-gray-400 hover:text-white text-sm">About Us</button></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-sm">Games</a></li>
+                <li><button onClick={() => onNavigate('games')} className="text-gray-400 hover:text-white text-sm">Games</button></li>
                 <li><button onClick={() => onNavigate('explore')} className="text-gray-400 hover:text-white text-sm">Explore</button></li>
                 <li><button onClick={() => onNavigate('developers')} className="text-gray-400 hover:text-white text-sm">Developers</button></li>
               </ul>
@@ -349,12 +350,12 @@ const HomePage = ({ onNavigate }) => {
             <div>
               <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
               <div className="space-y-2 text-sm">
+                <p className="text-gray-400">+639876543021</p>
                 <p className="text-gray-400">GameBayan@gmail.com</p>
-                <p className="text-gray-400">Support & Partnerships</p>
               </div>
               
               {/* Social Media Icons */}
-              <div className="flex space-x-4 mt-4">
+              <div className="flex space-x-4 mt-4 justify-center">
                 <a href="#" className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
                   <span className="text-white text-sm">f</span>
                 </a>
