@@ -131,7 +131,7 @@ const HomePage = ({ onNavigate }) => {
               </p>
               
               {/* Action Buttons */}
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 justify-center">
                 <button 
                   onClick={() => onNavigate('explore')}
                   className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
@@ -151,29 +151,23 @@ const HomePage = ({ onNavigate }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Hablon Game Card */}
               <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400">
-                <div className="h-48 bg-gradient-to-br from-yellow-600 to-orange-800 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <h3 className="font-bold text-xl mb-2">HABLON</h3>
-                    <p className="text-sm opacity-90">Bayani</p>
-                    <p className="text-xs opacity-75 mt-2">FROM VISAYAS TO START</p>
-                  </div>
-                  {/* Character silhouette placeholder */}
-                  <div className="absolute right-4 bottom-4 w-16 h-16 bg-black bg-opacity-30 rounded-full flex items-center justify-center">
-                    <span className="text-white text-lg">⚔️</span>
-                  </div>
+                <div className="h-48 relative">
+                  <img 
+                    src="https://i0.wp.com/gamingph.com/wp-content/uploads/2022/06/hablon-dawani-pc-game-filipino-developer.jpg?ssl=1"
+                    alt="Hablon Game"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
               {/* Hapunan Game Card */}
-              <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-600">
-                <div className="h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center relative">
-                  <div className="text-center text-white">
-                    <h3 className="font-bold text-xl mb-2">HAPUNAN</h3>
-                    <p className="text-sm opacity-75 mt-8">Shadows of Barangay Sak Duto</p>
-                  </div>
-                  {/* Horror theme elements */}
-                  <div className="absolute top-4 right-4 w-8 h-8 bg-red-600 bg-opacity-50 rounded-full"></div>
-                  <div className="absolute bottom-4 left-4 w-6 h-6 bg-red-600 bg-opacity-30 rounded-full"></div>
+              <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400">
+                <div className="h-48 relative">
+                  <img 
+                    src="https://i.ytimg.com/vi/k8a9v9MBBq8/sddefault.jpg"
+                    alt="Hapunan Game"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -189,11 +183,12 @@ const HomePage = ({ onNavigate }) => {
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Until Then Game */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-purple-600 to-pink-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-2xl mb-2">UNTIL THEN</h3>
-                  <p className="text-lg opacity-90">Interactive Drama</p>
-                </div>
+              <div className="h-64 relative">
+                <img 
+                  src="https://blog.playstation.com/tachyon/2024/02/12186c21474d835a0a2dad4a70fe8172becf892c.jpeg?resize=1088%2C612&crop_strategy=smart"
+                  alt="Until Then Game"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
             </div>
 
@@ -228,11 +223,12 @@ const HomePage = ({ onNavigate }) => {
 
             {/* Game Visual */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-yellow-600 to-orange-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-2xl mb-2">EXOGENESIS</h3>
-                  <p className="text-lg opacity-90">Perils of Rebirth</p>
-                </div>
+              <div className="h-64 relative">
+                <img 
+                  src="https://im.ziffdavisinternational.com/ign_ap/screenshot/f/filipino-game-exogenesis-perils-of-rebirth-greenli/filipino-game-exogenesis-perils-of-rebirth-greenli_vtm3.jpg"
+                  alt="Exogenesis: Perils of Rebirth Game"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -245,11 +241,12 @@ const HomePage = ({ onNavigate }) => {
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Game Visual */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
-              <div className="h-64 bg-gradient-to-br from-red-600 to-purple-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-2xl mb-2">BAYANI</h3>
-                  <p className="text-lg opacity-90">Fighting Game</p>
-                </div>
+              <div className="h-64 relative">
+                <img 
+                  src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/941020/capsule_616x353.jpg?t=1656957999"
+                  alt="Bayani Fighting Game"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -267,21 +264,37 @@ const HomePage = ({ onNavigate }) => {
         </div>
       </section>
 
+      {/* More Games Button Section */}
+      <section className="py-8 bg-black">
+        <div className="container mx-auto px-6 text-center">
+          <button 
+            onClick={() => onNavigate('games')}
+            className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 rounded-full font-medium transition-colors text-lg"
+          >
+            MORE GAMES
+          </button>
+        </div>
+      </section>
+
       {/* Top Developers Section */}
       <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl font-bold text-white">Top Developers in the Platform</h2>
             <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              View All
+              Explore All
             </button>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Developer 1 */}
             <div className="text-center">
-              <div className="w-24 h-24 bg-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">P</span>
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                <img 
+                  src="https://yt3.googleusercontent.com/ytc/AIdro_kvh-IxyeWahZUzI8ktz-p-Hj2mDedklfkopedBl67r=s900-c-k-c0x00ffffff-no-rj"
+                  alt="Polychroma Games"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Polychroma Games</h3>
               <p className="text-gray-400">Indie Studio</p>
@@ -289,17 +302,25 @@ const HomePage = ({ onNavigate }) => {
 
             {/* Developer 2 */}
             <div className="text-center">
-              <div className="w-24 h-24 bg-cyan-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">S</span>
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/en/6/6a/Sekai_Project_logo.jpeg"
+                  alt="Sekai Project"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Secret Project</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Sekai Project</h3>
               <p className="text-gray-400">Game Studio</p>
             </div>
 
             {/* Developer 3 */}
             <div className="text-center">
-              <div className="w-24 h-24 bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">R</span>
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+                <img 
+                  src="https://media.glassdoor.com/sqll/3700725/ranida-games-squarelogo-1662453812419.png"
+                  alt="Ranida Games"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Ranida Games</h3>
               <p className="text-gray-400">Indie Developer</p>
