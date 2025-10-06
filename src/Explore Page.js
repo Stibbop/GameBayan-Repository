@@ -252,7 +252,7 @@ const ExplorePage = ({ onNavigate }) => {
             <div>
               <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
                 <img 
-                  src="https://scontent.fcrk2-4.fna.fbcdn.net/v/t39.30808-6/518311501_586603811190855_5567820748489506115_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEi1OTklNx7SoZrsAKLJ_8hJHHR0rkArLwkcdHSuQCsvFw4jYrhtcScGU0PZbrwcjp_Nug1eRUFf0E81YNJeKzk&_nc_ohc=oz8YtWvuk4kQ7kNvwHKxXtv&_nc_oc=Adk-hg7e4R_ucl-Opdi3JlNWF3YwddmX-_9ZXS3Zmfa_VlSqiyRJLBRv-b6eFN9XrqU&_nc_zt=23&_nc_ht=scontent.fcrk2-4.fna&_nc_gid=SrUiHyXSsJtH0Egvsl2mZw&oh=00_AfYtsAJUnNAyts597FEEsIR5UoxVCI0vsilRKNWUAPrdGw&oe=68D58677" 
+                  src="https://img.itch.zone/aW1hZ2UvMzYwMjQyMi8yMTQ0MzY5Mi5qcGc=/original/EF9AxN.jpg" 
                   alt="Silent Still 2" 
                   className="w-full h-64 object-cover"
                 />
