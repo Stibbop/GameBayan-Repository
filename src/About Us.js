@@ -42,11 +42,12 @@ const AboutUs = ({ onNavigate }) => {
     try {
       // EmailJS configuration - REPLACE WITH YOUR ACTUAL VALUES FROM STEPS 2, 3, AND 4
       const serviceID = 'service_bk1nkh2'; // STEP 2: Replace with YOUR Service ID
-      const templateID = 'template_agzehjr'; // STEP 3: Replace with YOUR Template ID  
+      const confirmationTemplateID = 'template_agzehjr'; // STEP 3: Template for user confirmation
+      const adminNotificationTemplateID = 'template_gwmlibx'; // Your dedicated admin template
       const publicKey = 'vCjpTC8FR5OSky1my'; // STEP 4: Replace with YOUR Public Key
 
       // Check if credentials are still placeholder values
-      if (serviceID === 'YOUR_SERVICE_ID' || templateID === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
+      if (serviceID === 'YOUR_SERVICE_ID' || confirmationTemplateID === 'YOUR_TEMPLATE_ID' || publicKey === 'YOUR_PUBLIC_KEY') {
         setSubmitStatus({
           type: 'error',
           message: 'EmailJS is not configured yet. Please set up your EmailJS credentials first.'
@@ -55,19 +56,19 @@ const AboutUs = ({ onNavigate }) => {
         return;
       }
 
-      console.log('Attempting to send email with:', {
+      console.log('Attempting to send emails with:', {
         serviceID,
-        templateID,
+        confirmationTemplateID,
+        adminNotificationTemplateID,
         publicKey: publicKey.substring(0, 5) + '...' // Only show first 5 chars for security
       });
 
       // Initialize EmailJS with public key
       emailjs.init(publicKey);
 
-      // SIMPLE SINGLE EMAIL APPROACH
-      // This will send ONE email with the user's information
-      const templateParams = {
-        to_name: emailForm.name, // Recipient name
+      // EMAIL 1: Send confirmation email TO USER
+      const userConfirmationParams = {
+        to_name: emailForm.name, // User's name
         to_email: emailForm.email, // Send TO the user's email
         from_name: 'GameBayan Team', // Your team name  
         from_email: 'GameBayan@gmail.com', // Your email
@@ -85,19 +86,44 @@ If you need immediate assistance, please reply to this email.`,
         user_name: emailForm.name
       };
 
+      // EMAIL 2: Send notification TO ADMIN using dedicated admin template
+      const adminNotificationParams = {
+        // Variables for your admin template (template_gwmlibx)
+        from_name: emailForm.name,           // User's name - shows as sender {{from_name}}
+        user_email: emailForm.email,         // User's email - for reply-to {{user_email}}
+        original_subject: emailForm.subject, // Subject line {{original_subject}}
+        user_message: emailForm.message,     // User's actual message {{user_message}}
+        
+        // Admin template should have these hardcoded in EmailJS dashboard:
+        // To Email: stevensulayao@gmail.com (hardcoded)
+        // Reply To: {{user_email}} (dynamic)
+        // From Name: {{from_name}} (dynamic)
+      };
+
       // Debug logging - check what's being sent
       console.log('=== EMAIL DEBUG INFO ===');
-      console.log('Recipient email (to_email):', templateParams.to_email);
-      console.log('Recipient name (to_name):', templateParams.to_name);
+      console.log('User confirmation email (to_email):', userConfirmationParams.to_email);
+      console.log('Admin notification email (to_email):', adminNotificationParams.to_email);
       console.log('Service ID:', serviceID);
-      console.log('Template ID:', templateID);
-      console.log('All template params:', templateParams);
+      console.log('Template IDs:', { confirmationTemplateID, adminNotificationTemplateID });
+      console.log('User params:', userConfirmationParams);
+      console.log('Admin params:', adminNotificationParams);
       console.log('========================');
 
-      // Send the email
-      const response = await emailjs.send(serviceID, templateID, templateParams);
-      
-      console.log('Email sent successfully:', response);
+      // Send both emails
+      console.log('Sending confirmation email to user...');
+      const userResponse = await emailjs.send(serviceID, confirmationTemplateID, userConfirmationParams);
+      console.log('User confirmation email sent successfully:', userResponse);
+
+      console.log('Sending notification email to admin...');
+      try {
+        const adminResponse = await emailjs.send(serviceID, adminNotificationTemplateID, adminNotificationParams);
+        console.log('Admin notification email sent successfully:', adminResponse);
+      } catch (adminError) {
+        console.error('Admin email failed:', adminError);
+        // Don't fail the whole process if admin email fails
+        console.log('User email sent successfully, but admin notification failed');
+      }
       
       setSubmitStatus({
         type: 'success',
