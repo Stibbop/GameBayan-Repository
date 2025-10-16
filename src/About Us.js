@@ -285,18 +285,18 @@ If you need immediate assistance, please reply to this email.`,
       {/* Main About Us Section */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
-            <div className="space-y-8 group">
-              <h1 className="text-5xl lg:text-6xl font-bold text-cyan-400 text-center hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 cursor-default" >About Us</h1>
+            <div className="space-y-8 group order-2 lg:order-1">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-400 text-center hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 cursor-default" >About Us</h1>
               
               {/* GameBayan Logo Large */}
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="text-black font-bold text-4xl">🎮</span>
+              <div className="flex items-center justify-center space-x-2 md:space-x-4">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-black font-bold text-2xl md:text-4xl">🎮</span>
                 </div>
                 <div>
-                  <h2 className="text-6xl lg:text-7xl font-bold">
+                  <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold">
                     <span className="text-red-500">GAME</span>
                     <span className="text-blue-400">BAYAN</span>
                   </h2>
@@ -304,12 +304,12 @@ If you need immediate assistance, please reply to this email.`,
               </div>
               
               {/* Tagline */}
-              <h3 className="text-2xl font-semibold text-gray-300 text-center hover:text-white transition-all duration-300 transform hover:scale-105">
+              <h3 className="text-lg md:text-2xl font-semibold text-gray-300 text-center hover:text-white transition-all duration-300 transform hover:scale-105">
                 Where Pinoy Creativity Meets Gaming
               </h3>
               
               {/* Description */}
-              <p className="text-gray-400 text-lg leading-relaxed hover:text-gray-300 transition-all duration-300 transform hover:scale-[1.02] cursor-default">
+              <p className="text-base md:text-lg text-gray-400 leading-relaxed hover:text-gray-300 transition-all duration-300 transform hover:scale-[1.02] cursor-default">
                 GameBayan is a web-based platform designed to promote and
                 feature video games proudly made by Filipino game developers.
                 The web platform totally made indie and accessible "Steam-style" catalog 
@@ -318,11 +318,11 @@ If you need immediate assistance, please reply to this email.`,
             </div>
             
             {/* Right Column - Game Development Team Image */}
-            <div className="relative transform transition-all duration-500 hover:scale-105 group cursor-pointer">
+            <div className="relative transform transition-all duration-500 hover:scale-105 group cursor-pointer order-1 lg:order-2">
               <img 
                 src="https://meliorgames.com/wp-content/uploads/2019/09/game-dev-team-min-scaled.jpg" 
                 alt="Game Development Team" 
-                className="w-full h-full object-cover rounded-lg transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-400/30 group-hover:brightness-110 group-hover:contrast-110"
+                className="w-full h-48 md:h-64 lg:h-auto object-cover rounded-lg transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-400/30 group-hover:brightness-110 group-hover:contrast-110"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
             </div>

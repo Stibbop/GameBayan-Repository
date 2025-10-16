@@ -5,7 +5,6 @@ const HomePage = ({ onNavigate }) => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header Navigation */}
       <header className="bg-gray-800 shadow-lg relative">
         <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
@@ -25,7 +24,6 @@ const HomePage = ({ onNavigate }) => {
               </div>
             </button>
             
-            {/* Navigation Menu */}
             <div className="hidden md:flex space-x-8">
               <button 
                 onClick={() => onNavigate('about')} 
@@ -53,7 +51,6 @@ const HomePage = ({ onNavigate }) => {
               </button>
             </div>
             
-            {/* Mobile Menu Button */}
             <div className="md:hidden">
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -66,7 +63,7 @@ const HomePage = ({ onNavigate }) => {
             </div>
           </nav>
           
-          {/* Mobile Menu Dropdown */}
+
           {mobileMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-black border-t border-gray-700 shadow-lg z-50">
               <div className="container mx-auto px-6 py-4">
