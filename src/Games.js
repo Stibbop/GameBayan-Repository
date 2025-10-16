@@ -15,9 +15,9 @@ const Games = ({ onNavigate }) => {
     },
     {
       id: 2,
-      title: "GALA Filipino Game Wave",
-      image: "https://via.placeholder.com/600x300/059669/ffffff?text=GALA+Game+Wave", 
-      description: "Mobile Era: The Filipino Game Wave - NOW THIS IS HOW TO AT QA APP!"
+      title: "Silent Still",
+      image: "https://img.itch.zone/aW1hZ2UvMzYwMjQyMi8yMTQ0MzY5Mi5qcGc=/original/EF9AxN.jpg", 
+      description: "Silent Still is a first-person psychological horror game that delves into the terrifying experience of sleep paralysis and nightmares. You will feel the true horror that sleep paralysis can bring and the overwhelming fear it instills in a person."
     }
   ];
 
@@ -213,7 +213,7 @@ const Games = ({ onNavigate }) => {
         {/* Hero Section */}
         <div className="mb-12">
           <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold text-cyan-400">Discover Filipino Games!</h1>
+            <h1 className="text-5xl font-bold text-cyan-400 hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 cursor-default">Discover Filipino Games!</h1>
           </div>
           
         </div>
@@ -221,11 +221,11 @@ const Games = ({ onNavigate }) => {
         {/* Featured & Recommended Section with Search Bar */}
         <div className="mb-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
-            <h2 className="text-2xl font-bold text-white">Featured & Recommended</h2>
+            <h2 className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors duration-300 transform hover:scale-105">Featured & Recommended</h2>
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <div className="flex items-center bg-gray-700 rounded-lg px-4 py-2">
+              <div className="flex items-center bg-gray-700 hover:bg-gray-600 rounded-lg px-4 py-2 transition-all duration-300 cursor-pointer transform hover:scale-105">
                 <span className="text-gray-300 mr-2">All</span>
-                <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-gray-300 transition-transform duration-300 hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -233,10 +233,10 @@ const Games = ({ onNavigate }) => {
                 <input 
                   type="text" 
                   placeholder="Search something..." 
-                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-cyan-400 focus:outline-none"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50 transition-all duration-300 hover:bg-gray-600 transform hover:scale-105"
                 />
-                <button className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:scale-110 transition-transform duration-300">
+                  <svg className="w-5 h-5 text-gray-400 hover:text-cyan-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </button>
@@ -244,7 +244,7 @@ const Games = ({ onNavigate }) => {
             </div>
           </div>
           <div className="relative">
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-800 hover:bg-gray-700 rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-cyan-500/10">
               <div className="grid md:grid-cols-2 gap-6 p-6">
                 {/* Featured Game Image */}
                 <div className="relative">
@@ -260,14 +260,14 @@ const Games = ({ onNavigate }) => {
                 </div>
                 
                 {/* Game Info */}
-                <div className="flex flex-col justify-center items-center text-center">
-                  <h3 className="text-3xl font-bold text-white mb-4">
+                <div className="flex flex-col justify-center items-center text-center group">
+                  <h3 className="text-3xl font-bold text-white mb-4 transition-all duration-300 transform group-hover:scale-105 group-hover:text-cyan-400">
                     {featuredGames[featuredSlide].title}
                   </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-gray-300 mb-6 leading-relaxed transition-all duration-300 group-hover:text-white">
                     {featuredGames[featuredSlide].description}
                   </p>
-                  <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                  <button className="bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/50 active:scale-95">
                     DOWNLOAD
                   </button>
                 </div>
@@ -277,18 +277,18 @@ const Games = ({ onNavigate }) => {
             {/* Navigation Arrows for Featured */}
             <button 
               onClick={prevFeatured}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 transition-transform duration-300 hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             
             <button 
               onClick={nextFeatured}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 transition-transform duration-300 hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -299,9 +299,9 @@ const Games = ({ onNavigate }) => {
                 <button
                   key={index}
                   onClick={() => setFeaturedSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
                     index === featuredSlide 
-                      ? 'bg-white' 
+                      ? 'bg-white shadow-lg' 
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                 />
@@ -312,10 +312,10 @@ const Games = ({ onNavigate }) => {
 
         {/* GALA Mobile Era Banner Section */}
         <div className="mb-8">
-          <div className="bg-gray-800 rounded-lg overflow-hidden">
+          <div className="bg-gray-800 hover:bg-gray-700 rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/20 group cursor-pointer">
             <div className="grid grid-cols-2 gap-0">
               {/* GALA Game Image */}
-              <div>
+              <div className="overflow-hidden">
                 <img 
                   src="https://kendikorp.com/wp-content/uploads/2023/01/banner.png?w=1024"
                   alt="GALA Mobile Era Game"
@@ -324,11 +324,11 @@ const Games = ({ onNavigate }) => {
               </div>
               
               {/* Game Info */}
-              <div className="bg-gray-700 flex flex-col justify-center p-6">
-                <h3 className="text-xl font-bold text-white mb-2">
+              <div className="bg-gray-700 group-hover:bg-gray-600 flex flex-col justify-center p-6 transition-all duration-300">
+                <h3 className="text-xl font-bold text-white mb-2 transition-all duration-300 transform group-hover:scale-105 group-hover:text-cyan-400">
                   Mobile Era: The Filipino Game Wave
                 </h3>
-                <p className="text-cyan-400 text-base font-semibold">
+                <p className="text-cyan-400 text-base font-semibold transition-all duration-300 group-hover:text-cyan-300">
                   NOW THRU AUGUST 30 AT 10 AM PT
                 </p>
               </div>
@@ -338,20 +338,22 @@ const Games = ({ onNavigate }) => {
 
         {/* New Arrival Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">New Arrival</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 hover:text-cyan-400 transition-colors duration-300 transform hover:scale-105">New Arrival</h2>
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {newArrivals.slice(newArrivalSlide, newArrivalSlide + 3).map((game, index) => (
-                <div key={game.id} className="bg-gray-800 rounded-lg overflow-hidden">
-                  <img 
-                    src={game.image}
-                    alt={game.title}
-                    className="w-full h-64 object-cover"
-                  />
+                <div key={game.id} className="bg-gray-800 hover:bg-gray-700 rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20 group cursor-pointer">
+                  <div className="overflow-hidden">
+                    <img 
+                      src={game.image}
+                      alt={game.title}
+                      className="w-full h-64 object-cover transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-110"
+                    />
+                  </div>
                   <div className="p-4 text-center">
-                    <h3 className="text-lg font-bold text-white mb-1">{game.title}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{game.subtitle}</p>
-                    <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded text-sm transition-colors">
+                    <h3 className="text-lg font-bold text-white mb-1 transition-all duration-300 group-hover:text-cyan-400 group-hover:scale-105">{game.title}</h3>
+                    <p className="text-gray-400 text-sm mb-3 transition-colors duration-300 group-hover:text-gray-300">{game.subtitle}</p>
+                    <button className="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-6 rounded text-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/50 active:scale-95">
                       DOWNLOAD
                     </button>
                   </div>
@@ -363,9 +365,9 @@ const Games = ({ onNavigate }) => {
             {newArrivalSlide > 0 && (
               <button 
                 onClick={prevNewArrival}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 transition-transform duration-300 hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -374,9 +376,9 @@ const Games = ({ onNavigate }) => {
             {newArrivalSlide < newArrivals.length - 3 && (
               <button 
                 onClick={nextNewArrival}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 transition-transform duration-300 hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -388,9 +390,9 @@ const Games = ({ onNavigate }) => {
                 <button
                   key={index}
                   onClick={() => setNewArrivalSlide(index * 3)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
                     Math.floor(newArrivalSlide / 3) === index 
-                      ? 'bg-white' 
+                      ? 'bg-white shadow-lg' 
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                 />
@@ -401,22 +403,23 @@ const Games = ({ onNavigate }) => {
 
         {/* Browse Category Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">Browse Category</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 hover:text-cyan-400 transition-colors duration-300 transform hover:scale-105">Browse Category</h2>
           <div className="relative">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {categories.slice(categorySlide, categorySlide + 4).map((category) => (
-                <div key={category.id} className="relative group cursor-pointer">
+                <div key={category.id} className="relative group cursor-pointer transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                   <div className="relative rounded-lg h-40 overflow-hidden">
                     <img 
                       src={category.image}
                       alt={category.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-110"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-80 flex items-center justify-center`}>
-                      <h3 className="text-white font-bold text-sm md:text-base px-2 text-center">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-80 group-hover:opacity-90 flex items-center justify-center transition-all duration-300`}>
+                      <h3 className="text-white font-bold text-sm md:text-base px-2 text-center transition-all duration-300 transform group-hover:scale-110 group-hover:text-yellow-200">
                         {category.name}
                       </h3>
                     </div>
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                   </div>
                 </div>
               ))}
@@ -426,9 +429,9 @@ const Games = ({ onNavigate }) => {
             {categorySlide > 0 && (
               <button 
                 onClick={prevCategory}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 transition-transform duration-300 hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
@@ -437,9 +440,9 @@ const Games = ({ onNavigate }) => {
             {categorySlide < categories.length - 4 && (
               <button 
                 onClick={nextCategory}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 transition-transform duration-300 hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -451,9 +454,9 @@ const Games = ({ onNavigate }) => {
                 <button
                   key={index}
                   onClick={() => setCategorySlide(index * 4)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
                     Math.floor(categorySlide / 4) === index 
-                      ? 'bg-white' 
+                      ? 'bg-white shadow-lg' 
                       : 'bg-gray-600 hover:bg-gray-500'
                   }`}
                 />

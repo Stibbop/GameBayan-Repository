@@ -288,15 +288,15 @@ If you need immediate assistance, please reply to this email.`,
           <div className="grid lg:grid-cols-2 gap-12 items-center ">
         
             <div className="space-y-8 ">
-              <h1 className="text-5xl lg:text-6xl font-bold text-blue-400 text-center" >About Us</h1>
+              <h1 className="text-5xl lg:text-6xl font-bold text-cyan-400 text-center" >About Us</h1>
               
               {/* GameBayan Logo Large */}
               <div className="flex items-center justify-center space-x-4">
-                <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="text-black font-bold text-2xl">🎮</span>
+                <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <span className="text-black font-bold text-4xl">🎮</span>
                 </div>
                 <div>
-                  <h2 className="text-4xl font-bold">
+                  <h2 className="text-6xl lg:text-7xl font-bold">
                     <span className="text-red-500">GAME</span>
                     <span className="text-blue-400">BAYAN</span>
                   </h2>
@@ -318,12 +318,13 @@ If you need immediate assistance, please reply to this email.`,
             </div>
             
             {/* Right Column - Game Development Team Image */}
-            <div className="relative">
+            <div className="relative transform transition-all duration-500 hover:scale-105">
               <img 
                 src="https://meliorgames.com/wp-content/uploads/2019/09/game-dev-team-min-scaled.jpg" 
                 alt="Game Development Team" 
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-400/30"
               />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
             </div>
           </div>
         </div>
@@ -338,47 +339,47 @@ If you need immediate assistance, please reply to this email.`,
             {/* Top Row - 3 Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             {/* Visibility for Local Developers */}
-            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:bg-gray-750">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-cyan-500 hover:scale-110">
+                  <svg className="w-6 h-6 text-white transition-transform duration-300 hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Visibility for Local Developers</h3>
+                <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-cyan-400">Visibility for Local Developers</h3>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed transition-colors duration-300 hover:text-gray-200">
                 We give Filipino game creators a dedicated space to showcase their work to both local and international audiences.
               </p>
             </div>
 
             {/* Stream-Style Experience */}
-            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:bg-gray-750">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-cyan-500 hover:scale-110">
+                  <svg className="w-6 h-6 text-white transition-transform duration-300 hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white">A "Steam-Style" Catalog Experience</h3>
+                <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-cyan-400">A "Steam-Style" Catalog Experience</h3>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed transition-colors duration-300 hover:text-gray-200">
                 Browse games the way you would on global platforms, but with a focus on Filipino creativity, culture, and innovation.
               </p>
             </div>
 
             {/* Support for Gaming Industry */}
-            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:bg-gray-750">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-cyan-500 hover:scale-110">
+                <svg className="w-8 h-8 text-white transition-transform duration-300 hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white">Support for a Growing Industry</h3>
+                <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-cyan-400">Support for a Growing Industry</h3>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed transition-colors duration-300 hover:text-gray-200">
                 By featuring and promoting Philippine-made games, GameBayan helps fuel the growth of the local game development community.
               </p>
             </div>
@@ -387,31 +388,31 @@ If you need immediate assistance, please reply to this email.`,
             {/* Bottom Row - 2 Cards Centered */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Hub for Filipino-Made Games */}
-            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:bg-gray-750">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-cyan-500 hover:scale-110">
+                <svg className="w-8 h-8 text-white transition-transform duration-300 hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white">A Hub for Filipino-Made Games</h3>
+                <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-cyan-400">A Hub for Filipino-Made Games</h3>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed transition-colors duration-300 hover:text-gray-200">
                 GameBayan brings together locally developed indie and studio titles in one easy-to-access platform—your one-stop shop for discovering homegrown talent.
               </p>
             </div>
 
             {/* A Gateway to Unique and Culturally Inspired Titles */}
-            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-colors">
+            <div className="bg-gray-800 rounded-xl p-6 border border-cyan-400 hover:border-cyan-300 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:bg-gray-750">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-cyan-500 hover:scale-110">
+                  <svg className="w-6 h-6 text-white transition-transform duration-300 hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-white">A Gateway to Unique and Culturally Inspired Titles</h3>
+                <h3 className="text-lg font-semibold text-white transition-colors duration-300 hover:text-cyan-400">A Gateway to Unique and Culturally Inspired Titles</h3>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-sm leading-relaxed transition-colors duration-300 hover:text-gray-200">
                 Find games with stories, art, and gameplay that reflect the rich heritage and imagination of the Philippines.
               </p>
             </div>
@@ -423,10 +424,10 @@ If you need immediate assistance, please reply to this email.`,
       {/* Call to Action Section */}
       <section className="py-16 bg-black">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8 text-cyan-400">
+          <h2 className="text-4xl font-bold mb-8 text-cyan-400 transition-all duration-500 hover:text-cyan-300 hover:scale-105">
             Be part of the future of Philippine gaming!
           </h2>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-xl hover:shadow-blue-500/30 active:scale-95">
             Explore Games!
           </button>
         </div>
@@ -445,8 +446,8 @@ If you need immediate assistance, please reply to this email.`,
 
             {/* Contact Form - Full Width */}
             <div className="max-w-2xl mx-auto">
-              <div className="bg-gray-800 rounded-xl p-8 border border-gray-700">
-                <h3 className="text-2xl font-semibold text-white mb-6">Send us a message</h3>
+              <div className="bg-gray-800 rounded-xl p-8 border border-gray-700 transition-all duration-300 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-400/10 transform hover:scale-[1.02]">
+                <h3 className="text-2xl font-semibold text-white mb-6 transition-colors duration-300 hover:text-cyan-400">Send us a message</h3>
                 
                 <form onSubmit={handleEmailSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -461,7 +462,7 @@ If you need immediate assistance, please reply to this email.`,
                         value={emailForm.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 hover:border-gray-500 focus:scale-[1.02]"
                         placeholder="Enter your name"
                       />
                     </div>
@@ -477,7 +478,7 @@ If you need immediate assistance, please reply to this email.`,
                         value={emailForm.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 hover:border-gray-500 focus:scale-[1.02]"
                         placeholder="Enter your email"
                       />
                     </div>
@@ -494,7 +495,7 @@ If you need immediate assistance, please reply to this email.`,
                       value={emailForm.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 hover:border-gray-500 focus:scale-[1.02]"
                       placeholder="What's this about?"
                     />
                   </div>
@@ -510,7 +511,7 @@ If you need immediate assistance, please reply to this email.`,
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-vertical"
+                      className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-vertical transition-all duration-300 hover:border-gray-500 focus:scale-[1.02]"
                       placeholder="Tell us more about your inquiry..."
                     />
                   </div>
