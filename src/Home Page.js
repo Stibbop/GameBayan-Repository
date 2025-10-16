@@ -117,7 +117,7 @@ const HomePage = ({ onNavigate }) => {
             <div className="space-y-8">
               {/* Gaming Marketplace Badge */}
               <div>
-                <span className="text-gray-400 text-sm font-medium">Gaming Marketplace</span>
+                <span className="text-gray-400 text-lg font-semibold">Gaming Marketplace</span>
               </div>
               
               {/* Main Title */}
