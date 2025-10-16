@@ -150,24 +150,26 @@ const HomePage = ({ onNavigate }) => {
             {/* Right Column - Featured Games */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Hablon Game Card */}
-              <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400">
-                <div className="h-48 relative">
+              <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:border-cyan-300">
+                <div className="h-48 relative overflow-hidden">
                   <img 
                     src="https://i0.wp.com/gamingph.com/wp-content/uploads/2022/06/hablon-dawani-pc-game-filipino-developer.jpg?ssl=1"
                     alt="Hablon Game"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
 
               {/* Hapunan Game Card */}
-              <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400">
-                <div className="h-48 relative">
+              <div className="bg-gray-800 rounded-lg overflow-hidden border border-cyan-400 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/20 hover:border-cyan-300">
+                <div className="h-48 relative overflow-hidden">
                   <img 
                     src="https://i.ytimg.com/vi/k8a9v9MBBq8/sddefault.jpg"
                     alt="Hapunan Game"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </div>
             </div>
@@ -182,13 +184,15 @@ const HomePage = ({ onNavigate }) => {
           
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Until Then Game */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
-              <div className="h-64 relative">
+            <div className="bg-gray-800 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/30">
+              <div className="h-64 relative overflow-hidden">
                 <img 
                   src="https://blog.playstation.com/tachyon/2024/02/12186c21474d835a0a2dad4a70fe8172becf892c.jpeg?resize=1088%2C612&crop_strategy=smart"
                   alt="Until Then Game"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-transparent to-purple-600/20 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
 
@@ -222,13 +226,15 @@ const HomePage = ({ onNavigate }) => {
             </div>
 
             {/* Game Visual */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
-              <div className="h-64 relative">
+            <div className="bg-gray-800 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+              <div className="h-64 relative overflow-hidden">
                 <img 
                   src="https://im.ziffdavisinternational.com/ign_ap/screenshot/f/filipino-game-exogenesis-perils-of-rebirth-greenli/filipino-game-exogenesis-perils-of-rebirth-greenli_vtm3.jpg"
                   alt="Exogenesis: Perils of Rebirth Game"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-blue-600/20 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
           </div>
@@ -240,13 +246,15 @@ const HomePage = ({ onNavigate }) => {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Game Visual */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
-              <div className="h-64 relative">
+            <div className="bg-gray-800 rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30">
+              <div className="h-64 relative overflow-hidden">
                 <img 
                   src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/941020/capsule_616x353.jpg?t=1656957999"
                   alt="Bayani Fighting Game"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-yellow-600/20 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>
 
@@ -288,41 +296,41 @@ const HomePage = ({ onNavigate }) => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Developer 1 */}
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+            <div className="text-center transform transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-transparent hover:border-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/30">
                 <img 
                   src="https://yt3.googleusercontent.com/ytc/AIdro_kvh-IxyeWahZUzI8ktz-p-Hj2mDedklfkopedBl67r=s900-c-k-c0x00ffffff-no-rj"
                   alt="Polychroma Games"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Polychroma Games</h3>
+              <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 hover:text-cyan-400">Polychroma Games</h3>
               <p className="text-gray-400">Indie Studio</p>
             </div>
 
             {/* Developer 2 */}
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+            <div className="text-center transform transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-transparent hover:border-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/30">
                 <img 
                   src="https://upload.wikimedia.org/wikipedia/en/6/6a/Sekai_Project_logo.jpeg"
                   alt="Sekai Project"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Sekai Project</h3>
+              <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 hover:text-cyan-400">Sekai Project</h3>
               <p className="text-gray-400">Game Studio</p>
             </div>
 
             {/* Developer 3 */}
-            <div className="text-center">
-              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden">
+            <div className="text-center transform transition-all duration-300 hover:scale-105">
+              <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-4 border-transparent hover:border-cyan-400 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/30">
                 <img 
                   src="https://media.glassdoor.com/sqll/3700725/ranida-games-squarelogo-1662453812419.png"
                   alt="Ranida Games"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Ranida Games</h3>
+              <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 hover:text-cyan-400">Ranida Games</h3>
               <p className="text-gray-400">Indie Developer</p>
             </div>
           </div>
