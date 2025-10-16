@@ -33,7 +33,12 @@ const HomePage = ({ onNavigate }) => {
               >
                 About Us
               </button>
-              <button className="text-yellow-400 hover:text-yellow-300 font-medium underline">Games</button>
+              <button 
+                onClick={() => onNavigate('games')} 
+                className="text-cyan-600 hover:text-cyan-500"
+              >
+                Games
+              </button>
               <button 
                 onClick={() => onNavigate('explore')} 
                 className="text-cyan-600 hover:text-cyan-500"
@@ -77,8 +82,11 @@ const HomePage = ({ onNavigate }) => {
                   </button>
                   
                   <button 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center space-x-3 text-yellow-400 w-full text-left py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors"
+                    onClick={() => {
+                      onNavigate('games');
+                      setMobileMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-3 text-gray-300 hover:text-white w-full text-left py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors"
                   >
                     <span className="font-medium">Games</span>
                   </button>
@@ -289,7 +297,10 @@ const HomePage = ({ onNavigate }) => {
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl font-bold text-white">Top Developers in the Platform</h2>
-            <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <button 
+              onClick={() => onNavigate('developers')}
+              className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            >
               Explore All
             </button>
           </div>
