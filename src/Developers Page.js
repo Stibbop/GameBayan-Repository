@@ -176,33 +176,33 @@ const DevelopersPage = ({ onNavigate }) => {
       <div className="container mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-cyan-400 mb-4">Meet the Creators!</h1>
-          <p className="text-gray-300 text-lg mb-8">Discover the teams and talents behind your favorite Filipino games</p>
-          <p className="text-gray-400 text-base">Developers in the Website</p>
+          <h1 className="text-5xl font-bold text-cyan-400 mb-4 hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 cursor-default">Meet the Creators!</h1>
+          <p className="text-gray-300 text-lg mb-8 hover:text-white transition-colors duration-300">Discover the teams and talents behind your favorite Filipino games</p>
+          <p className="text-gray-400 text-base hover:text-gray-300 transition-colors duration-300">Developers in the Website</p>
         </div>
 
         {/* Developers Grid */}
         <div className="mb-12 ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ">
             {currentDevelopers.map((developer) => (
-              <div key={developer.id} className="bg-gray-900 rounded-lg overflow-hidden hover:bg-gray-800 transition-colors">
+              <div key={developer.id} className="bg-gray-900 hover:bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20 group cursor-pointer">
                 {/* Developer Logo */}
-                <div className="bg-black h-48 flex items-center justify-center">
+                <div className="bg-black h-48 flex items-center justify-center overflow-hidden">
                   <img 
                     src={developer.logo}
                     alt={developer.name}
-                    className="w-40 h-40 object-contain"
+                    className="w-40 h-40 object-contain transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-110"
                   />
                 </div>
                 
                 {/* Developer Info */}
                 <div className="p-6 text-center">
-                  <h3 className="text-lg font-bold text-white mb-4">
+                  <h3 className="text-lg font-bold text-white mb-4 transition-all duration-300 group-hover:text-cyan-400 group-hover:scale-105">
                     {developer.name}
                   </h3>
                   
                   {/* Learn More Button */}
-                  <button className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg text-sm transition-colors w-full">
+                  <button className="bg-green-600 hover:bg-green-500 text-white font-medium py-2 px-6 rounded-lg text-sm transition-all duration-300 w-full transform hover:scale-110 hover:shadow-lg hover:shadow-green-500/50 active:scale-95">
                     Learn More
                   </button>
                 </div>
@@ -216,33 +216,33 @@ const DevelopersPage = ({ onNavigate }) => {
           <button 
             onClick={goToPrevPage}
             disabled={currentPage === 1}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+            className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 transform ${
               currentPage === 1 
                 ? 'text-gray-500 cursor-not-allowed' 
-                : 'text-white hover:bg-gray-700'
+                : 'text-white hover:bg-gray-700 hover:scale-110 hover:shadow-lg active:scale-95'
             }`}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className={`w-5 h-5 transition-transform duration-300 ${currentPage === 1 ? '' : 'hover:-translate-x-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             <span>Previous</span>
           </button>
           
-          <div className="text-white">
+          <div className="text-white bg-gray-800 px-4 py-2 rounded-lg border border-gray-600 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105">
             <span>Page {currentPage} of {totalPages}</span>
           </div>
           
           <button 
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+            className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 transform ${
               currentPage === totalPages 
                 ? 'text-gray-500 cursor-not-allowed' 
-                : 'text-white hover:bg-gray-700'
+                : 'text-white hover:bg-gray-700 hover:scale-110 hover:shadow-lg active:scale-95'
             }`}
           >
             <span>Next</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className={`w-5 h-5 transition-transform duration-300 ${currentPage === totalPages ? '' : 'hover:translate-x-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>

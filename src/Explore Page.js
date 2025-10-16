@@ -151,18 +151,18 @@ const ExplorePage = ({ onNavigate }) => {
       <div className="container mx-auto px-6 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-cyan-400 mb-4">Explore GameBayan Today!</h1>
-          <p className="text-gray-300 text-lg mb-8">Stay updated on what's new and hot</p>
+          <h1 className="text-5xl font-bold text-cyan-400 mb-4 hover:text-cyan-300 transition-all duration-300 transform hover:scale-105 cursor-default">Explore GameBayan Today!</h1>
+          <p className="text-gray-300 text-lg mb-8 hover:text-white transition-colors duration-300">Stay updated on what's new and hot</p>
           
           {/* Search Bar */}
           <div className="max-w-md mx-auto relative">
             <input 
               type="text" 
               placeholder="Search something..." 
-              className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-cyan-400 focus:outline-none"
+              className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-opacity-50 transition-all duration-300 hover:bg-gray-600 transform hover:scale-105"
             />
-            <button className="absolute right-3 top-1/2 transform -translate-y-1/2">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:scale-110 transition-transform duration-300">
+              <svg className="w-5 h-5 text-gray-400 hover:text-cyan-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
@@ -171,18 +171,18 @@ const ExplorePage = ({ onNavigate }) => {
 
         {/* Headlines Carousel Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">Headliners</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 hover:text-cyan-400 transition-colors duration-300 transform hover:scale-105">Headliners</h2>
           <div className="relative">
             {/* Carousel Container */}
-            <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg overflow-hidden">
-              <div className="relative">
+            <div className="bg-gradient-to-r from-green-600 to-teal-600 rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-cyan-500/20 group cursor-pointer">
+              <div className="relative overflow-hidden">
                 <img 
                   src={headlines[currentSlide].image}
                   alt={headlines[currentSlide].title}
-                  className="w-full h-96 object-cover transition-opacity duration-500"
+                  className="w-full h-96 object-cover transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-110"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6 transition-all duration-300 group-hover:from-gray-900">
+                  <h3 className="text-2xl font-bold text-white mb-2 transition-all duration-300 transform group-hover:scale-105 group-hover:text-cyan-300">
                     {headlines[currentSlide].title}
                   </h3>
                 </div>
@@ -192,18 +192,18 @@ const ExplorePage = ({ onNavigate }) => {
             {/* Navigation Arrows */}
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 transition-transform duration-300 hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-lg active:scale-95"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 transition-transform duration-300 hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -214,9 +214,9 @@ const ExplorePage = ({ onNavigate }) => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 transform hover:scale-125 ${
                     index === currentSlide 
-                      ? 'bg-white' 
+                      ? 'bg-white shadow-lg' 
                       : 'bg-white bg-opacity-50 hover:bg-opacity-75'
                   }`}
                 />
@@ -227,41 +227,45 @@ const ExplorePage = ({ onNavigate }) => {
 
         {/* Random Blogs Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6">Random Blogs</h2>
+          <h2 className="text-2xl font-bold text-white mb-6 hover:text-cyan-400 transition-colors duration-300 transform hover:scale-105">Random Blogs</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* Horror Games Blog */}
-            <div>
-              <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
-                <img 
-                  src="https://contents.spin.ph/image/resize/image/2025/02/08/thin-threads-hapunan-horror-banner-1739001549.webp" 
-                  alt="Filipino Horror Games" 
-                  className="w-full h-64 object-cover"
-                />
+            <div className="group cursor-pointer">
+              <div className="bg-gray-800 hover:bg-gray-700 rounded-lg overflow-hidden border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20">
+                <div className="overflow-hidden">
+                  <img 
+                    src="https://contents.spin.ph/image/resize/image/2025/02/08/thin-threads-hapunan-horror-banner-1739001549.webp" 
+                    alt="Filipino Horror Games" 
+                    className="w-full h-64 object-cover transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-110"
+                  />
+                </div>
               </div>
               <div className="mt-4">
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:scale-105">
                   These Filipino horror games are so scary, content creators are losing it!
                 </h3>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 active:scale-95">
                   Read More
                 </button>
               </div>
             </div>
 
             {/* Silent Still Blog */}
-            <div>
-              <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
-                <img 
-                  src="https://img.itch.zone/aW1hZ2UvMzYwMjQyMi8yMTQ0MzY5Mi5qcGc=/original/EF9AxN.jpg" 
-                  alt="Silent Still 2" 
-                  className="w-full h-64 object-cover"
-                />
+            <div className="group cursor-pointer">
+              <div className="bg-gray-800 hover:bg-gray-700 rounded-lg overflow-hidden border border-gray-700 hover:border-cyan-500 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20">
+                <div className="overflow-hidden">
+                  <img 
+                    src="https://img.itch.zone/aW1hZ2UvMzYwMjQyMi8yMTQ0MzY5Mi5qcGc=/original/EF9AxN.jpg" 
+                    alt="Silent Still 2" 
+                    className="w-full h-64 object-cover transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-110"
+                  />
+                </div>
               </div>
               <div className="mt-4">
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 transition-all duration-300 group-hover:text-cyan-400 group-hover:scale-105">
                   Silent Still 2 is out now on itch.io
                 </h3>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-blue-500/50 active:scale-95">
                   Read More
                 </button>
               </div>
@@ -270,7 +274,7 @@ const ExplorePage = ({ onNavigate }) => {
 
           {/* More Button */}
           <div className="text-center mt-8">
-            <button className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 rounded-lg text-lg transition-colors">
+            <button className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3 rounded-lg text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/50 active:scale-95">
               More
             </button>
           </div>
